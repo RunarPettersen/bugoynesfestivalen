@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Red Steel",
+        "info": "<p>Red Steel er et rockeband som, til tross for sin unge alder, allerede har opparbeidet seg erfaring og blitt vant til å spille på store scener. De har markert seg på den norske rockescenen med en heftig konsert på Tons of Rock 2023 og som support for store navn som Wig Wam. Med 120 000 følgere og over 50 millioner visninger på TikTok, når de ut til et stort internasjonalt publikum med sin musikk og imponerende evne til å underholde.</p><p>Live leverer Red Steel en energisk og visuelt gjennomført konsertopplevelse, inspirert av band som Ghost, støttet av solid musikalsk kvalitet som blander rock, pop og metal.</p><p>The Moshville Times omtalte deres opptreden på Tons of Rock 2023 slik:<p>'Despite only being young, they put on a belter of a performance and had really made an effort with their looks – all dressed in variations on the same outfit, and some with face paint. The drummer with his epic hair was the stand-out performer for me, but all of them looked very easy and competent on stage, so I hope they will go far.'</p>",
+        "homepage": "https://www.facebook.com/redsteelband/",
+        "image": "images/artists/redsteel.jpg"
+    },
+    {
+        "name": "Iron Maiden",
+        "info": "Artist 2 is a renowned musician with a worldwide following.",
+        "homepage": "https://artist2homepage.com",
+        "image": "images/artists/ironmaiden.jpg"
+    },
+    {
+        "name": "Backstreet Girls",
+        "info": "Known for soulful tunes and energetic shows, Artist 3 is a must-see.",
+        "homepage": "https://artist3homepage.com",
+        "image": "images/artists/backstreetgirls.jpg"
+    },
+    {
+        "name": "Judas Priest",
+        "info": "A description about Artist 1. Known for amazing performances and unique style.",
+        "homepage": "https://artist1homepage.com",
+        "image": "images/artists/judaspriest.jpg"
+    },
+    {
+        "name": "Stage Dolls",
+        "info": "Artist 2 is a renowned musician with a worldwide following.",
+        "homepage": "https://artist2homepage.com",
+        "image": "images/artists/stagedolls.jpg"
+    },
+    {
+        "name": "TNT",
+        "info": "Known for soulful tunes and energetic shows, Artist 3 is a must-see.",
+        "homepage": "https://artist3homepage.com",
+        "image": "images/artists/tnt.jpg"
+    },
+    {
+        "name": "TNT",
+        "info": "Known for soulful tunes and energetic shows, Artist 3 is a must-see.",
+        "homepage": "https://artist3homepage.com",
+        "image": "images/artists/tnt.jpg"
+    },
+    {
+        "name": "Sandra Lyng",
+        "info": "A description about Artist 1. Known for amazing performances and unique style.",
+        "homepage": "https://artist1homepage.com",
+        "image": "images/artists/sandralyng.jpg"
+    }
+]
