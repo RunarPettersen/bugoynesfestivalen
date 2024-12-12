@@ -63,3 +63,17 @@ main {
     color: var(--second-color);
     transform: scale(1.1);
 }
+
+/* YouTube Video Styling */
+.youtube-video {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.youtube-video iframe {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

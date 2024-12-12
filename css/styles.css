@@ -38,6 +38,12 @@ body {
     transition: padding 0.3s ease;
 }
 
+@media only screen and (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+    }
+}
+
 /* Logo Image */
 .navbar .logo img {
     height: 180px; /* Initial size */
@@ -66,6 +72,10 @@ body {
 }
 
 .navbar .menu a:hover {
+    color: var(--second-color);
+}
+
+.menu a.active-link {
     color: var(--second-color);
 }
 
