@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             <a href="${artist.homepage}" target="_blank">Besøk Hjemmeside</a>
         `;
 
-        // If the YouTube field is available, add the embedded video
         if (artist.youtube) {
             const youtubeEmbed = `
                 <div class="youtube-video">
