@@ -3,21 +3,19 @@ export async function loadArtists(jsonPath, container) {
         const response = await fetch(jsonPath);
         const artists = await response.json();
 
-        // Determine the base path for images (absolute paths to the project root)
-        const baseImagePath = window.location.origin + '/';
+        // Detect if the site is running on GitHub Pages
+        const isGitHubPages = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
 
-        // Base path for links (relative paths to the current page)
-        const linkBasePath = window.location.pathname.endsWith('/')
-            ? './' // Ends in / (e.g., program/index.html)
-            : '../'; // Nested pages (e.g., subfolder/index.html)
+        // Set the base path for the repository
+        const repoBasePath = isGitHubPages ? '/bugoynesfestivalen/' : '/'; // Update to your repository name if needed
 
         artists.forEach(artist => {
             const artistCard = document.createElement('div');
             artistCard.classList.add('artist');
 
             artistCard.innerHTML = `
-                <a href="${linkBasePath}artist.html?name=${encodeURIComponent(artist.name)}">
-                    <img src="${baseImagePath}${artist.image}" alt="${artist.name}">
+                <a href="${repoBasePath}artist.html?name=${encodeURIComponent(artist.name)}">
+                    <img src="${repoBasePath}${artist.image}" alt="${artist.name}">
                     <p>${artist.name}</p>
                 </a>
             `;
