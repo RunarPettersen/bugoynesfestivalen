@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tickets for Bugøynes Festival.">
+    <meta name="robots" content="index, follow">
+    <title>Bugøynes Festival - Tickets</title>
+    <link rel="icon" href="../../images/icons/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="../"><img src="../../images/logo/bugoynesfestivalenlogo.png" alt="Bugøynes Festival logo"></a>
+        </div>
+        <div class="dates">
+            25th - 26th July 2025
+            <div id="countdown"></div>
+        </div>
+        <div class="lang-switcher">
+            <a href="/index.html" id="no-flag" aria-label="Norwegian">
+                <img src="../../images/flags/no.svg" alt="Norwegian Flag">
+            </a>
+            <a href="/en/index.html" id="en-flag" aria-label="English">
+                <img src="../../images/flags/gb.svg" alt="English Flag">
+            </a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="../">Home</a></li>
+                <li><a href="./">Tickets</a></li>
+                <li><a href="../program/">Program</a></li>
+                <li><a href="../info/">Info</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="tickets">
+            <h1>Tickets</h1>
+            <div class="ticket-container">
+                <div class="ticket">
+                    <h2>Festival Pass</h2>
+                    <p>Friday and Saturday</p>
+                    <p>Price: 1500 NOK</p>
+                    <p>Prices include service fee and VAT.</p>
+                    <a href="https://bfbilletter.hoopla.no/event/1658719188" target="_blank" class="buy-button">Buy Now</a>
+                </div>
+                <div class="ticket">
+                    <h2>Friday</h2>
+                    <p>25th July 2025</p>
+                    <p>Price: 850 NOK</p>
+                    <p>Prices include service fee and VAT.</p>
+                    <a href="https://bfbilletter.hoopla.no/event/1658719188" target="_blank" class="buy-button">Buy Now</a>
+                </div>
+                <div class="ticket">
+                    <h2>Saturday</h2>
+                    <p>26th July 2025</p>
+                    <p>Price: 850 NOK</p>
+                    <p>Prices include service fee and VAT.</p>
+                    <a href="https://bfbilletter.hoopla.no/event/1658719188" target="_blank" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="program">
+            <h1>Artists</h1>
+            <div class="artist-grid" id="artist-grid">
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>© Bugøynes Festival 2025</p>
+            <div class="social-media">
+                <a href="https://facebook.com/bugoynesfestivalen" target="_blank" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://instagram.com/bugoynesfestivalen/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com/watch?v=n4nX0k5HxSs" target="_blank" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>    
+
+    <script type="module" src="../../js/program.js"></script>
+    <script src="../../js/utils/highlightActiveLink.js"></script>
+    <script type="module" src="../../js/langSwitcher.js"></script>
+</body>
+</html>

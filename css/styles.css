@@ -35,7 +35,6 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    transition: padding 0.3s ease;
 }
 
 @media only screen and (max-width: 900px) {
@@ -95,6 +94,10 @@ section h1 {
 section p {
     font-size: 1.2rem;
     
+}
+
+section a {
+    color: var(--main-color);
 }
 
 /* Footer */
@@ -302,4 +305,140 @@ footer {
     font-weight: bold;
     color: var(--second-color);
     text-align: center;
+}
+
+/* History Page Styling */
+#history {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+#history h1 {
+    text-align: center;
+    color: var(--midnight-sun-red);
+    margin-bottom: 20px;
+}
+
+#history p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+/* Image Grid Styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Consistent size, adjusts for screen size */
+    gap: 15px;
+    margin: 30px 0;
+    justify-items: center;
+}
+
+.image-grid img {
+    width: 100%;
+    aspect-ratio: 9 / 6; /* Makes all images perfectly square */
+    object-fit: cover;    /* Ensures uniform cropping */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Form Styling */
+#contact {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact h2 {
+    color: var(--midnight-sun-red);
+    margin-bottom: 20px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact label {
+    text-align: left;
+    font-weight: bold;
+}
+
+#contact input, 
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact button {
+    padding: 10px 20px;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: center;
+}
+
+#contact button:hover {
+    background: var(--second-color);
+}
+
+/* Sponsors Image Grid Styling */
+.image-grid-sponsors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Consistent size, adjusts for screen size */
+    gap: 15px;
+    margin: 30px 0;
+    justify-items: center;
+}
+
+.image-grid-sponsors img {
+    height: 100px;
+    object-fit: cover;    /* Ensures uniform cropping */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image-grid-sponsors img:hover {
+    transform: scale(1.05);
+}
+
+/* Language switcher styling */
+.lang-switcher {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Language switcher flags styling */
+.lang-switcher a img {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
+}
+
+/* Highlight the active language with a border */
+.lang-switcher a.active img {
+    border: 2px solid var(--main-color);
 }

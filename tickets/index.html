@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Billeter til Bugøynesfestivalen.">
+    <meta name="robots" content="index, follow">
     <title>Bugøynesfestivalen - billetter</title>
+    <link rel="icon" href="/images/icons/favicon.png" type="image/png">
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
@@ -16,6 +19,14 @@
         <div class="dates">
             25. - 26. JULI 2025
             <div id="countdown"></div>
+        </div>
+        <div class="lang-switcher">
+            <a href="/index.html" id="no-flag" aria-label="Norwegian">
+                <img src="../images/flags/no.svg" alt="Norwegian Flag">
+            </a>
+            <a href="/en/index.html" id="en-flag" aria-label="English">
+                <img src="../images/flags/gb.svg" alt="English Flag">
+            </a>
         </div>
         <nav class="menu">
             <ul>
@@ -84,5 +95,6 @@
 
     <script type="module" src="../js/program.js"></script>
     <script src="../js/utils/highlightActiveLink.js"></script>
+    <script type="module" src="../js/langSwitcher.js"></script>
 </body>
 </html>
