@@ -10,7 +10,7 @@ export async function loadArtists(jsonPath, container) {
                 : '../json/artists.json'      
             : window.location.pathname.includes('/program/') || window.location.pathname.includes('/tickets/')
                 ? '../json/artists.json'      
-                : './json/artists.json';      
+                : './json/artists.json';   
 
         const response = await fetch(adjustedJsonPath);
         if (!response.ok) {

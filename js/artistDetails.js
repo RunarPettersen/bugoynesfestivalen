@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // Use a consistent absolute path for both language versions
-        const basePath = '/json/artists.json'; 
+        const basePath = '../json/artists.json'; 
         const response = await fetch(basePath);
 
         if (!response.ok) {
