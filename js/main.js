@@ -5,10 +5,8 @@ import { setupCountdown } from './utils/countdown.js';
 document.addEventListener('DOMContentLoaded', () => {
     const artistGrid = document.getElementById('artist-grid');
 
-    // Load artists dynamically
     loadArtists('./json/artists.json', artistGrid);
 
-    // Setup scroll effect
     setupScrollEffect();
 
     setupCountdown('2025-07-24');
