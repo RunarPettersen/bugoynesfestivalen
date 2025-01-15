@@ -8,12 +8,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        // Use a consistent absolute path for both language versions
-        const basePath = '../json/artists.json'; 
-        const response = await fetch(basePath);
+        // ✅ Adjusting the path for both local server and GitHub Pages
+        const isEnglish = window.location.pathname.includes('/en/');
+        const basePath = isEnglish
+            ? window.location.pathname.includes('/en/artist.html')
+                ? '../json/artists.json'  
+                : '../../json/artists.json'  
+            : window.location.pathname.includes('/artist.html')
+                ? '../json/artists.json'   
+                : './json/artists.json';   
 
+        const response = await fetch(basePath);
         if (!response.ok) {
-            throw new Error('Failed to fetch artist data.');
+            throw new Error(`Failed to fetch artist data from: ${basePath}`);
         }
 
         const artists = await response.json();
@@ -24,11 +31,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        // **Detect the current language based on the URL path**
-        const isEnglish = window.location.pathname.includes('/en/');
+        // ✅ Detect language and use the correct information
         const artistInfo = isEnglish ? artist.info_en : artist.info_no;
 
-        // **Update page title and meta description dynamically (language-aware)**
+        // ✅ Dynamically update the page title and meta description
         document.title = `${artist.name} - Bugøynesfestivalen`;
         const metaDescription = document.querySelector('meta[name="description"]') || document.createElement('meta');
         metaDescription.setAttribute('name', 'description');
@@ -37,16 +43,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.head.appendChild(metaDescription);
         }
 
-        // **Display artist details with language selection**
+        // ✅ Display artist details
         const artistDetails = document.getElementById('artist-details');
         artistDetails.innerHTML = `
             <h1>${artist.name}</h1>
-            <img src="/${artist.image}" alt="${artist.name}">
+            <img src="${artist.image.startsWith('images') ? '../' + artist.image : artist.image}" alt="${artist.name}">
             <div>${artistInfo || '<p>No additional information available.</p>'}</div>
             <a href="${artist.homepage}" target="_blank">Visit Homepage</a>
         `;
 
-        // **YouTube Video Embedding (if available)**
+        // ✅ Embed YouTube video if available
         if (artist.youtube) {
             const youtubeEmbed = `
                 <div class="youtube-video">
@@ -64,6 +70,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     } catch (error) {
         console.error('Error loading artist details:', error);
-        document.body.innerHTML = '<p>Unable to load artist details.</p>';
+        document.body.innerHTML = `<p>Unable to load artist details. Please try again later.</p>`;
     }
 });
