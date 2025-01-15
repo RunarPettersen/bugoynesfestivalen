@@ -11,6 +11,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Setup scroll effect
     setupScrollEffect();
 
-    // Setup countdown
-    setupCountdown('2025-07-25');
+    setupCountdown('2025-07-24');
 });
