@@ -3,14 +3,14 @@ export async function loadArtists(jsonPath, container) {
         // Check if the current language is English
         const isEnglish = window.location.pathname.includes('/en/');
 
-        // Determine the correct path for the JSON file based on language and folder depth
+        // Adjust JSON path based on language and folder depth (unchanged)
         const adjustedJsonPath = isEnglish
             ? window.location.pathname.includes('/en/program/') || window.location.pathname.includes('/en/tickets/')
-                ? '../../json/artists.json'  // If in a subfolder under 'en/'
-                : '../json/artists.json'      // If directly under 'en/'
+                ? '../../json/artists.json'  
+                : '../json/artists.json'      
             : window.location.pathname.includes('/program/') || window.location.pathname.includes('/tickets/')
-                ? '../json/artists.json'      // If in a subfolder under the root
-                : './json/artists.json';      // If in the root
+                ? '../json/artists.json'      
+                : './json/artists.json';      
 
         const response = await fetch(adjustedJsonPath);
         if (!response.ok) {
@@ -19,25 +19,29 @@ export async function loadArtists(jsonPath, container) {
 
         const artists = await response.json();
 
-        // Dynamically set the correct link and image paths based on language
         artists.forEach(artist => {
             const artistCard = document.createElement('div');
             artistCard.classList.add('artist');
 
-            // Correct the artist page link and image paths
+            // ✅ Fix for Links Only (Images Left Unchanged)
             const artistPagePath = isEnglish
-                ? `/en/artist.html?name=${encodeURIComponent(artist.name)}`
-                : `/artist.html?name=${encodeURIComponent(artist.name)}`;
+                ? window.location.pathname.includes('/en/program/') || window.location.pathname.includes('/en/tickets/')
+                    ? '../../artist.html?name=' + encodeURIComponent(artist.name)
+                    : './artist.html?name=' + encodeURIComponent(artist.name)
+                : window.location.pathname.includes('/program/') || window.location.pathname.includes('/tickets/')
+                    ? '../artist.html?name=' + encodeURIComponent(artist.name)
+                    : './artist.html?name=' + encodeURIComponent(artist.name);
 
+            // ✅ Image Path Left Exactly as Before (No Changes)
             const artistImagePath = isEnglish
                 ? window.location.pathname.includes('/en/program/') || window.location.pathname.includes('/en/tickets/')
-                    ? `../../${artist.image}`  // If deeper in folders under 'en/'
-                    : `../${artist.image}`     // If in 'en/' root
+                    ? `../../${artist.image}`  
+                    : `../${artist.image}`     
                 : window.location.pathname.includes('/program/') || window.location.pathname.includes('/tickets/')
-                    ? `../${artist.image}`      // If deeper in Norwegian folders
-                    : `${artist.image}`;        // If in the root
+                    ? `../${artist.image}`     
+                    : `${artist.image}`;        
 
-            // Generate the artist card HTML
+            // ✅ Generate the artist card with fixed links but unchanged images
             artistCard.innerHTML = `
                 <a href="${artistPagePath}">
                     <img src="${artistImagePath}" alt="${artist.name}">
