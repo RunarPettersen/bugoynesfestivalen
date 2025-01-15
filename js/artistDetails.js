@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 ? '../json/artists.json'  
                 : '../../json/artists.json'  
             : window.location.pathname.includes('/artist.html')
-                ? '../json/artists.json'   
-                : './json/artists.json';   
+                ? './json/artists.json'   
+                : '../json/artists.json';   
 
         const response = await fetch(basePath);
         if (!response.ok) {
