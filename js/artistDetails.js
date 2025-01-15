@@ -8,15 +8,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        // ✅ Adjusting the path for both local server and GitHub Pages
+        // ✅ Determine language and folder depth for accurate paths
         const isEnglish = window.location.pathname.includes('/en/');
+        const isDeeperPage = window.location.pathname.includes('/program/') || window.location.pathname.includes('/tickets/');
+        
+        // ✅ Adjust JSON Path based on language and depth
         const basePath = isEnglish
-            ? window.location.pathname.includes('/en/artist.html')
-                ? '../json/artists.json'  
-                : '../../json/artists.json'  
-            : window.location.pathname.includes('/artist.html')
-                ? './json/artists.json'   
-                : '../json/artists.json';   
+            ? isDeeperPage 
+                ? '../../json/artists.json'  // If deeper in English folders
+                : '../json/artists.json'     // If in English root
+            : isDeeperPage
+                ? '../json/artists.json'     // If deeper in Norwegian folders
+                : './json/artists.json';     // If in Norwegian root
 
         const response = await fetch(basePath);
         if (!response.ok) {
@@ -31,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        // ✅ Detect language and use the correct information
+        // ✅ Detect the correct language and select the right info
         const artistInfo = isEnglish ? artist.info_en : artist.info_no;
 
         // ✅ Dynamically update the page title and meta description
@@ -43,11 +46,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.head.appendChild(metaDescription);
         }
 
+        // ✅ Ensure images load correctly in both languages
+        const artistImagePath = isDeeperPage
+            ? (isEnglish ? '../../' : '../') + artist.image
+            : artist.image.startsWith('images') ? (isEnglish ? '../' : './') + artist.image : artist.image;
+
         // ✅ Display artist details
         const artistDetails = document.getElementById('artist-details');
         artistDetails.innerHTML = `
             <h1>${artist.name}</h1>
-            <img src="${artist.image.startsWith('images') ? '../' + artist.image : artist.image}" alt="${artist.name}">
+            <img src="${artistImagePath}" alt="${artist.name}">
             <div>${artistInfo || '<p>No additional information available.</p>'}</div>
             <a href="${artist.homepage}" target="_blank">Visit Homepage</a>
         `;
@@ -70,6 +78,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     } catch (error) {
         console.error('Error loading artist details:', error);
-        document.body.innerHTML = `<p>Unable to load artist details. Please try again later.</p>`;
+        document.body.innerHTML = '<p>Unable to load artist details. Please try again later.</p>';
     }
 });
