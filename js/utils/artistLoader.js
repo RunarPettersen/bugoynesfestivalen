@@ -26,7 +26,7 @@ export async function loadArtists(jsonPath, container) {
             // ✅ Fix for Links Only (Images Left Unchanged)
             const artistPagePath = isEnglish
                 ? window.location.pathname.includes('/en/program/') || window.location.pathname.includes('/en/tickets/')
-                    ? '../../artist.html?name=' + encodeURIComponent(artist.name)
+                    ? '../artist.html?name=' + encodeURIComponent(artist.name)
                     : './artist.html?name=' + encodeURIComponent(artist.name)
                 : window.location.pathname.includes('/program/') || window.location.pathname.includes('/tickets/')
                     ? '../artist.html?name=' + encodeURIComponent(artist.name)
