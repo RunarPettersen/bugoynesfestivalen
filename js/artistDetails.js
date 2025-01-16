@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        // ✅ Detect the correct language and select the right info
         const artistInfo = isEnglish ? artist.info_en : artist.info_no;
+        const artistTime = isEnglish ? artist.time_en : artist.time_no;
 
         // ✅ Dynamically update the page title and meta description
         document.title = `${artist.name} - Bugøynesfestivalen`;
@@ -46,21 +46,19 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.head.appendChild(metaDescription);
         }
 
-        // ✅ Ensure images load correctly in both languages
         const artistImagePath = isDeeperPage
             ? (isEnglish ? '../../' : '../') + artist.image
             : artist.image.startsWith('images') ? (isEnglish ? '../' : './') + artist.image : artist.image;
 
-        // ✅ Display artist details
         const artistDetails = document.getElementById('artist-details');
         artistDetails.innerHTML = `
             <h1>${artist.name}</h1>
             <img src="${artistImagePath}" alt="${artist.name}">
             <div>${artistInfo || '<p>No additional information available.</p>'}</div>
+            <div>${artistTime || '<p>TBA</p>'}</div>
             <a href="${artist.homepage}" target="_blank">Visit Homepage</a>
         `;
 
-        // ✅ Embed YouTube video if available
         if (artist.youtube) {
             const youtubeEmbed = `
                 <div class="youtube-video">

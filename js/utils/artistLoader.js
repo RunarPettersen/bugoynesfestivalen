@@ -1,9 +1,7 @@
 export async function loadArtists(jsonPath, container) {
     try {
-        // Check if the current language is English
         const isEnglish = window.location.pathname.includes('/en/');
 
-        // Adjust JSON path based on language and folder depth (unchanged)
         const adjustedJsonPath = isEnglish
             ? window.location.pathname.includes('/en/program/') || window.location.pathname.includes('/en/tickets/')
                 ? '../../json/artists.json'  
@@ -23,7 +21,6 @@ export async function loadArtists(jsonPath, container) {
             const artistCard = document.createElement('div');
             artistCard.classList.add('artist');
 
-            // ✅ Fix for Links Only (Images Left Unchanged)
             const artistPagePath = isEnglish
                 ? window.location.pathname.includes('/en/program/') || window.location.pathname.includes('/en/tickets/')
                     ? '../artist.html?name=' + encodeURIComponent(artist.name)
@@ -32,7 +29,6 @@ export async function loadArtists(jsonPath, container) {
                     ? '../artist.html?name=' + encodeURIComponent(artist.name)
                     : './artist.html?name=' + encodeURIComponent(artist.name);
 
-            // ✅ Image Path Left Exactly as Before (No Changes)
             const artistImagePath = isEnglish
                 ? window.location.pathname.includes('/en/program/') || window.location.pathname.includes('/en/tickets/')
                     ? `../../${artist.image}`  
@@ -41,7 +37,6 @@ export async function loadArtists(jsonPath, container) {
                     ? `../${artist.image}`     
                     : `${artist.image}`;        
 
-            // ✅ Generate the artist card with fixed links but unchanged images
             artistCard.innerHTML = `
                 <a href="${artistPagePath}">
                     <img src="${artistImagePath}" alt="${artist.name}">
