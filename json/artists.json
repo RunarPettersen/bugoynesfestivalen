@@ -38,5 +38,15 @@
         "homepage": "https://www.facebook.com/kardangofficial",
         "image": "images/artists/kardang.jpg",
         "youtube": "https://www.youtube.com/watch?v=T04-pquXSi0"
+    },
+    {
+        "name": "Drag Bingo",
+        "info_no": "<p><strong>DRAG BINGO med Miss Delicious & Miss Madam!</strong> Er du klar for en kveld som oser av glitter, glam og galskap? Sett deg til rette og gjør deg klar for to timer med det ultimate vorspielet, ledet av de kuleste dragdronningene nord for Karasjok!</p> <p><strong>Bingo på sitt beste:</strong> Den gode, gammeldagse bingotrommelen spinner frem ballene – men dette er langt fra en vanlig bingokveld! Forbered deg på gnistrende lipsync-oppvisninger som tar pusten fra deg.</p> <p><strong>Full dragfaktor:</strong> Høye hæler, høyt hår og enda høyere stemning! Miss Delicious og Miss Madam vet hvordan de leverer en fest du aldri glemmer.</p> <p><strong>Dette vil du ikke gå glipp av:</strong> Årets morsomste, mest glitrende og mest legendariske fest!</p>",
+        "info_en": "<p><strong>DRAG BINGO with Miss Delicious & Miss Madam!</strong> Are you ready for an evening filled with glitter, glam, and madness? Sit back and get ready for two hours of the ultimate pre-party, hosted by the coolest drag queens north of Karasjok!</p> <p><strong>Bingo at its best:</strong> The classic, old-fashioned bingo drum spins the balls – but this is far from your ordinary bingo night! Get ready for dazzling lip-sync performances that will take your breath away.</p> <p><strong>Full drag factor:</strong> High heels, big hair, and even higher energy! Miss Delicious and Miss Madam know how to deliver a party you'll never forget.</p> <p><strong>Don’t miss this:</strong> The funniest, most glittering, and most legendary party of the year!</p>",
+        "time_no": "Dag: Torsdag 24. juli.",
+        "time_en": "Day: Thursday 24th July.",
+        "homepage": "",
+        "image": "images/artists/dragbingo.jpg",
+        "youtube": ""
     }
 ]
